@@ -28,29 +28,29 @@ graph TD;
 ### Menu Tate B.
 | Arguments | Processing                                                      | Output/Return                                          |
 | ------------------ | ------------- | ------------ |
-| `none`    | takes choice from menu() and finds the proper function to call  | `Outputs` the function called from menu option.        |
+| `none`    | displays a menu and the user will be prompted to select an option.  | `Returns` the choice to be returned to main.        |
 
 ### Add_Contact Alex W.
 | Arguments | Processing                                                      | Output/Return                                          |
 | ------------------ | ------------- | ------------ |
-| `none`    | takes choice from menu() and finds the proper function to call  | `Outputs` the function called from menu option.        |
+| `none`    | append the contacts TXT file and add the contact data. It will prompt the user for: Name, Street Address, Phone Number, Email Address  | `Outputs` a success message.        |
 
 ### Search_Contact Alex W.
 | Arguments | Processing                                                      | Output/Return                                          |
 | ------------------ | ------------- | ------------ |
-| `none`    | takes choice from menu() and finds the proper function to call  | `Outputs` the function called from menu option.        |
+| `none`    | searches the contact TXT for a contact based on the name, returns the other info.  | `Outputs` the address, email, and phone number.        |
 
 ### Display_Contacts Alex W.
 | Arguments | Processing                                                      | Output/Return                                          |
 | ------------------ | ------------- | ------------ |
-| `none`    | takes choice from menu() and finds the proper function to call  | `Outputs` the function called from menu option.        |
+| `none`    | displays all contacts and then seperates each by a new line.  | `Outputs` the entire contact file with readability.        |
 
 ### Delete_Contact Alex W.
 | Arguments | Processing                                                      | Output/Return                                          |
 | ------------------ | ------------- | ------------ |
-| `none`    | takes choice from menu() and finds the proper function to call  | `Outputs` the function called from menu option.        |
+| `none`    | fetches the name entered by the user from the Contact TXT file and removes all the information for that user.  | `Outputs` a success message        |
 
 ### Edit_Contacts Tate B.
 | Arguments | Processing                                                      | Output/Return                                          |
 | ------------------ | ------------- | ------------ |
-| `none`    | takes choice from menu() and finds the proper function to call  | `Outputs` the function called from menu option.        |
+| `none`    | finds a contact and edits the entire contact.  | `Outputs` a success message.        |
