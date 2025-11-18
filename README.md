@@ -50,7 +50,7 @@ graph TD;
 | ------------------ | ------------- | ------------ |
 | `none`    | takes choice from menu() and finds the proper function to call  | `Outputs` the function called from menu option.        |
 
-### Edit_Contacts Alex W.
+### Edit_Contacts Tate B.
 | Arguments | Processing                                                      | Output/Return                                          |
 | ------------------ | ------------- | ------------ |
 | `none`    | takes choice from menu() and finds the proper function to call  | `Outputs` the function called from menu option.        |
