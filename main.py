@@ -16,3 +16,5 @@ def delete_contact():
 def display_contacts():
     pass
 
+def main():
+    pass
