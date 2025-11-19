@@ -15,7 +15,9 @@ def add_contact():#add_contact accepts no arguements
         
     except ValueError: 
         print("ERROR: Non-numeric date found, calculations haulted")
-    
+    except Exception:
+        print("An unknown error has occured")
+        
     #loop for all contacts
     for num in range(1, num_contacts +1):
         
@@ -56,15 +58,11 @@ def display_contacts():# display contacts accepts no arguements
     #open the file
     contact_file = open('contacts.txt', 'r')
     
-    
-    
     #set the readline name = contact_file.readline()
     name = contact_file.readline()
     
-    
     # counter
     count = 0
-    
     
     while name != '':
         
@@ -76,18 +74,11 @@ def display_contacts():# display contacts accepts no arguements
         #count
         print(f"Contact Information {count}: ")
         
-        
-        
         #strip the line
         name = name.rstrip('\n')
         street_address = street_address.rstrip('\n')
         phone_number = phone_number.rstrip('\n')
         email_address = email_address.rstrip('\n')
-        
-        
-        
-        
-        
         
         # output the contact
         print("Name: ", name)
