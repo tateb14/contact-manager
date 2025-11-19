@@ -49,11 +49,57 @@ def edit_contact():
 def delete_contact():
     pass
 
-def display_contacts(): #display contact accepts no arguements
-    #display contacts function that displays all contacts
+def display_contacts():# display contacts accepts no arguements
+    #A display contacts function that displays all contacts
     #and their information in a readable format
     
+    #open the file
     contact_file = open('contacts.txt', 'r')
+    
+    
+    
+    #set the readline name = contact_file.readline()
+    name = contact_file.readline()
+    street_address = contact_file.readline()
+    phone_number = contact_file.readline()
+    email_address = contact_file.readline()
+    
+    # counter
+    count = 1
+    
+    
+    while name != '' and street_address !='' and phone_number != '' and email_address != '':
+        #count
+        print(f"Contact Information {count}: ")
+        
+        
+        #strip the line
+        name = name.strip('\n')
+        street_address = street_address.strip('\n')
+        phone_number = phone_number.strip('\n')
+        email_address = email_address.strip('\n')
+        
+        
+        #read line
+        name = contact_file.readline()
+        street_address = contact_file.readline()
+        phone_number = contact_file.readline()
+        email_address = contact_file.readline()
+        
+        
+        # output the contact
+        print("Name: ", name)
+        print("Address: ", street_address)
+        print("Phone: ", phone_number)
+        print("Email: ", email_address)
+        print()  # blank line for readability
+        
+        #increase the counter
+        count += 1
+        
+        
+    contact_file.close() #close the file
+    print("\n" + str(count), "contacts retrieved.")
 
 def main():
     pass
