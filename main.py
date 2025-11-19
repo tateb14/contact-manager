@@ -60,31 +60,33 @@ def display_contacts():# display contacts accepts no arguements
     
     #set the readline name = contact_file.readline()
     name = contact_file.readline()
-    street_address = contact_file.readline()
-    phone_number = contact_file.readline()
-    email_address = contact_file.readline()
+    
     
     # counter
-    count = 1
+    count = 0
     
     
-    while name != '' and street_address !='' and phone_number != '' and email_address != '':
+    while name != '':
+        
+        #read line
+        street_address = contact_file.readline()
+        phone_number = contact_file.readline()
+        email_address = contact_file.readline()
+        
         #count
         print(f"Contact Information {count}: ")
         
         
+        
         #strip the line
-        name = name.strip('\n')
-        street_address = street_address.strip('\n')
-        phone_number = phone_number.strip('\n')
-        email_address = email_address.strip('\n')
+        name = name.rstrip('\n')
+        street_address = street_address.rstrip('\n')
+        phone_number = phone_number.rstrip('\n')
+        email_address = email_address.rstrip('\n')
         
         
-        #read line
-        name = contact_file.readline()
-        street_address = contact_file.readline()
-        phone_number = contact_file.readline()
-        email_address = contact_file.readline()
+        
+        
         
         
         # output the contact
@@ -97,6 +99,8 @@ def display_contacts():# display contacts accepts no arguements
         #increase the counter
         count += 1
         
+        #read line
+        name = contact_file.readline()
         
     contact_file.close() #close the file
     print("\n" + str(count), "contacts retrieved.")
