@@ -96,8 +96,7 @@ def edit_contact():
             
     except Exception as err:
         print(err)
-            
-
+        
     
 
 def delete_contact():
