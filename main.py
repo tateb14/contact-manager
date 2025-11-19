@@ -10,14 +10,16 @@ def search_contact():
     pass
 
 def edit_contact():
-    # edit_contacts accepts no args
+    # edit_contacts accepts no args 
     # finds a contact and edits all data
     # outputs a success msg upon completion.
     
     # boolean flag
     found = False
     
-    search = input("Enter the name of the contact you wish to edit: ")
+    
+    # search query = input("Enter the name of the contact you wish to edit: ")
+    search = search_contact()
     option_select = int(input("Select which option you wish to edit.\n\n1) Street Address\n2) Phone Number\n3)Email Address\n4) Cancel\n>: "))
     
     while option_select > 4 or option_select < 1:
