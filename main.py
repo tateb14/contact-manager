@@ -76,8 +76,72 @@ def add_contact():#add_contact accepts no arguements
     
     
 
-def search_contact():
-    pass
+def search_contact(): #search contact accepts no arguements
+    #search contact searches the contact.txt based on the name, returns the other info
+    #it outputs name, street address, phone number, and email
+    #then outputs a succesful message
+    
+    #Boolean flag to determine search status
+    found = False
+    
+    #get the name from user
+    search = input("Please Enter a name in your contacts: ")
+    
+    #open the file
+    contact_file = open('contacts.txt', 'r')
+    
+    #get the first name from the file
+    name = contact_file.readline()
+    
+    #loop to read each line of the file
+    while name != '':
+        name = contact_file.readline()
+        
+        #strip the newline from the descritption
+        name = name.rstrip('\n')
+        
+        if name.lower() == search.lower(): #determine if the contact is found
+            
+            found = True
+            
+            print("\n Contact Found! \n")
+        
+            #get the other info
+            street_address = contact_file.readline()
+            phone_number = contact_file.readline()
+            email_address = contact_file.readline()
+        
+            #strip the info
+            street_address = street_address.rstrip('\n')
+            phone_number = phone_number.rstrip('\n')
+            email_address = email_address.rstrip('\n')
+        
+            #print the info
+            print(f"Name: {name} ")
+            print(f"Street Address: {street_address} ")
+            print(f"Phone Number: {phone_number} ")
+            print(f"Email Address: {email_address} ")
+            
+            #stop if the name is found
+            break
+        
+        
+        #get the next name
+        name = contact_file.readline()
+        
+        
+        
+    if not found: #found = false
+        print("\nThe name was not found in your contacts.")
+            
+            
+    #close the file
+    contact_file.close()
+    
+
+    
+        
+        
 
 def edit_contact():
     # edit_contacts accepts no args 
