@@ -247,7 +247,7 @@ def display_contacts():# display contacts accepts no arguements
     name = contact_file.readline()
     
     # counter
-    count = 0
+    count = 1
     
     while name != '':
         
