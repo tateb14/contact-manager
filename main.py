@@ -95,7 +95,7 @@ def search_contact(): #search contact accepts no arguements
     
     #loop to read each line of the file
     while name != '':
-        name = contact_file.readline()
+        
         
         #strip the newline from the descritption
         name = name.rstrip('\n')
@@ -138,11 +138,8 @@ def search_contact(): #search contact accepts no arguements
     #close the file
     contact_file.close()
     
-
+    return search
     
-        
-        
-
 def edit_contact():
     # edit_contacts accepts no args 
     # finds a contact and edits all data
@@ -233,8 +230,66 @@ def edit_contact():
         
     
 
-def delete_contact():
-    pass
+def delete_contact(): #delte contact accepts no arguements
+    #fetches the name entered by the user from contacts.txt
+    #then removes all information from that user
+    #outputs a message saying that it successfully delelted the contact info
+
+    #boolean flag
+    found = False
+
+    # ask the user which contact they want to delete 
+    search = input("Please enter the name of the contact to delete: ").strip()
+
+    try:
+        contacts_file = open("contacts.txt", "r")
+        temp_file = open("temp_contacts.txt", "w")
+
+        # read the first name 
+        name = contacts_file.readline()
+
+        # loop until end of file
+        while name != "":
+            # read the next three lines for this record 
+            street_address = contacts_file.readline()
+            phone_number = contacts_file.readline()
+            email_address = contacts_file.readline()
+
+            # make sure the name is all clean for comparing it
+            clean_name = name.rstrip("\n")
+
+            # if this is not the contact to delete, write the whole record to the temp file
+            if clean_name.lower() != search.lower():
+                # write name and the other lines exactly as read 
+                temp_file.write(name)
+                # if any of the following lines are empty write blank lines to not mess up the file
+                temp_file.write(street_address if street_address != "" else "\n")
+                temp_file.write(phone_number if phone_number != "" else "\n")
+                temp_file.write(email_address if email_address != "" else "\n")
+            else:
+                found = True  # mark that we found and skipped/deleted this contact
+
+            # read next name for next loop iteration
+            name = contacts_file.readline()
+
+        contacts_file.close()
+        temp_file.close()
+
+        # replace the original file with the temp file
+        os.remove("contacts.txt")
+        os.rename("temp_contacts.txt", "contacts.txt")
+
+        if found:
+            print("Contact deleted successfully.")
+        else:
+            print("The contact was not found.")
+
+    except FileNotFoundError:
+        print("No contacts file found.  Nothing to delete.")
+    except Exception as err:
+        print("An error occurred:", err)
+
+    
 
 def display_contacts():# display contacts accepts no arguements
     #A display contacts function that displays all contacts
@@ -247,7 +302,7 @@ def display_contacts():# display contacts accepts no arguements
     name = contact_file.readline()
     
     # counter
-    count = 1
+    count = 0
     
     while name != '':
         
