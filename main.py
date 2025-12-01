@@ -224,7 +224,7 @@ def edit_contact():
             os.rename("temp_contacts.txt", "contacts.txt")
             
             # temp print statement
-            print("Successfully edited the message.")
+            print("Successfully edited the contact.")
             
     except Exception as err:
         print(err)
