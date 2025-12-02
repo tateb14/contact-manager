@@ -97,6 +97,7 @@ def search_contact(): #search contact accepts no arguements
     while name != '':
         
         
+
         #strip the newline from the descritption
         name = name.rstrip('\n')
         
@@ -149,8 +150,7 @@ def edit_contact():
     found = False
     
     
-    # search query = input("Enter the name of the contact you wish to edit: ")
-    search = search_contact()
+    search = input("Enter the name of the contact you wish to edit: ")
     option_select = int(input("Select which option you wish to edit.\n\n1) Street Address\n2) Phone Number\n3)Email Address\n4) Cancel\n>: "))
     
     while option_select > 4 or option_select < 1:
@@ -223,7 +223,7 @@ def edit_contact():
             os.rename("temp_contacts.txt", "contacts.txt")
             
             # temp print statement
-            print("Success.")
+            print("Successfully edited the contact.")
             
     except Exception as err:
         print(err)
