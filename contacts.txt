@@ -1,4 +1,12 @@
-Tate
-1234 N Main Street
-1234567
-@gmail.com
+Talan
+Maple St.
+383-292-3838
+talan2@gmail.com
+Bob
+282 Maple
+316-990-4500
+bob@gmail.com
+Dillon
+Ridge St
+884-990-3939
+dillon@gmail.com
